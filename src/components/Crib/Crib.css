@@ -1,0 +1,54 @@
+/* Crib.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px 0;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .cardSelection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .cardOption {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .cardOption:hover,
+  .cardOption.selected {
+    transform: scale(1.1);
+    border-color: #007bff; /* Blue border for hover and selection */
+  }
+
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submitButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

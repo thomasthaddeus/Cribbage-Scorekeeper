@@ -1,8 +1,8 @@
 // src/components/Crib/Crib.tsx
 
-import React, { useState } from 'react';
-import styles from './Crib.module.css';
-import { Card as CardType } from 'card-games-typescript'; // Adjust based on your card handling setup
+import React, { useState } from "react";
+import styles from "./Crib.module.css";
+import { Card as CardType } from "card-games-typescript"; // Adjust based on your card handling setup
 
 interface CribProps {
   onNextStep: () => void;
@@ -14,11 +14,17 @@ const Crib: React.FC<CribProps> = ({ onNextStep, onSetCrib, playerHand }) => {
   const [selectedCards, setSelectedCards] = useState<CardType[]>([]);
 
   const toggleCardSelection = (card: CardType) => {
-    const isSelected = selectedCards.some(c => c.rank === card.rank && c.suite === card.suite);
+    const isSelected = selectedCards.find(
+      (c) => c.rank === card.rank && c.suite === card.suite
+    );
     if (isSelected) {
-      setSelectedCards(current => current.filter(c => c.rank !== card.rank || c.suite !== card.suite));
+      setSelectedCards(
+        selectedCards.filter(
+          (c) => c.rank !== card.rank || c.suite !== card.suite
+        )
+      );
     } else if (selectedCards.length < 4) {
-      setSelectedCards(current => [...current, card]);
+      setSelectedCards([...selectedCards, card]);
     }
   };
 

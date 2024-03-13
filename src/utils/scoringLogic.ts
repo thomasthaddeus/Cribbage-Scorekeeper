@@ -95,7 +95,7 @@ const scoreRuns = ({ cards, starter }: Hand): number => {
         let runScore = 1;
 
         // Count duplicates to handle runs with pairs, three of a kind, etc.
-        let duplicatesCount = {};
+        let duplicatesCount: Record<number, number> = {};
         for (let i = start; i <= end; ++i) {
           duplicatesCount[allCards[i]] = (duplicatesCount[allCards[i]] || 0) + 1;
         }
